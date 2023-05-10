@@ -1,3 +1,6 @@
 # My DjangoDB project - Series
 
- Small DB about series made in Django
+ <p>Small DB about series made in Django</p>
+ Using:
+ 
+ - Models
