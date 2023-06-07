@@ -47,6 +47,10 @@ class Series(models.Model):
                                     verbose_name='Genres of series')
     directors = models.ManyToManyField('Director',
                                        verbose_name='Directors')
+    foto = models.ImageField(verbose_name='Photo',
+                             help_text='Select picture',
+                             blank=True,
+                             null=True)
 
     class Meta:
         verbose_name = 'Series'

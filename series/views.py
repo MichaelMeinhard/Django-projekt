@@ -9,4 +9,9 @@ class SeriesListView(ListView):
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    featured_series = Series.objects.order_by('-name')[:2]
+
+    context = {
+        'featured_series': featured_series,
+    }
+    return render(request, 'index.html', context=context)
