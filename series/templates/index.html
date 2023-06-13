@@ -1,4 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div class="p-5 text-white text-center"
+         style="background-image: url('{{ featured_series.foto.url }}');box-shadow: inset 0 0 0 100vh rgba(0,0,0,.6);
+                 background-repeat: no-repeat;background-size:cover;background-position: center;height:auto;">
+        <h1 class="fs-1 fw-bold">Nejdelší seriál</h1>
+        <a href=""><img class="rounded mx-auto d-block m-4" src="{{ longest_series.foto.url }}"
+                        style="max-width:500px;"
+                        alt="{{ longest_series.name }}"></a>
+        <p><span class="fs-5 fw-bold">{{ longest_series.name }}</span> by
+            {% for director in longest_series.director.all %}{{ director.name }}, {{ director.sname }}  {% endfor %}
+    </div>
+    <div class="p-5 text-center">
+        <h2 class="fs-2 fw-bold">Featured art</h2>
+        {% for featured_series in featured_series.all %}
+            <a href=""><img class="rounded m-4" src="{{ featured_series.foto.url }}"
+                            style="width:350px;height: 350px;object-fit: cover"
+                            alt="{{ featured_series.name }}">
+            </a>
 
+        {% endfor %}
+    </div>
 {% endblock %}

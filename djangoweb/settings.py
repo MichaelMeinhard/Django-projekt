@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Přidání naší nové aplikace
     'series.apps.SeriesConfig',
-    'django_bootstrap5',
+    'bootstrap5',
 
 ]
 

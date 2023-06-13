@@ -10,8 +10,10 @@ class SeriesListView(ListView):
 
 def index(request):
     featured_series = Series.objects.order_by('-name')[:2]
+    longest_series = Series.objects.order_by('length')
 
     context = {
         'featured_series': featured_series,
+        'longest_series': longest_series,
     }
     return render(request, 'index.html', context=context)
