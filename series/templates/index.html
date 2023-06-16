@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
-{% block title %}Seriály{% endblock %}
+{% block title %}Series{% endblock %}
 
 {% block content %}
     <div class="p-2 text-white text-center bg-dark">
-        <h1 class="fs-1">Nejdelší seriál</h1>
-        <a href=""><img class="rounded mx-auto d-block m-4" src="{{ longest_series.foto.url }}"
+        <h1 class="fs-1">Longest series</h1>
+        <a href="{% url 'detail_series' longest_series.id %}"><img class="rounded mx-auto d-block m-4" src="{{ longest_series.foto.url }}"
                         style="width:300px; height: 350px;"
                         alt="{{ longest_series.name }}"></a>
      <p><span class="fs-5 fw-bold">{{ longest_series.name }}</span>
     </div>
     <div class="p-3 text-center">
-        <h2 class="fs-2 ">Nejsledovanější seriály</h2>
+        <h2 class="fs-2 ">Featured series</h2>
     <div class="row">
         {% for featured_series in featured_series.all %}
             <div class="column">
-            <a href=""><img class="rounded m-4" src="{{ featured_series.foto.url }}"
+            <a href="{% url 'detail_series' featured_series.id %}"><img class="rounded m-4" src="{{ featured_series.foto.url }}"
                             style="width:300px;height: 380px;"
                             alt="{{ featured_series.name }}"></a>
             <p><span class="fs-5 fw-bold">{{ featured_series.name }}</span>

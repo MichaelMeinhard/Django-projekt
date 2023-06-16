@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
-{% block title %}Seznam seriálů{% endblock %}
+{% block title %}List of series{% endblock %}
 
 {% block content %}
     <div class="p-3 text-center">
-<h1>Seznam seriálů</h1>
+<h1>List of series</h1>
     <div class="row">
-        {% for series in series %}
-            <div class="column">
-            <a href=""><img class="rounded m-4" src="{{ series.foto.url }}"
+        {% for series in series%}
+            <div class="col-md-3">
+            <a href="{% url 'detail_series' series.id %}"><img class="rounded m-4" src="{{ series.foto.url }}"
                             style="width:300px;height: 380px;"
                             alt="{{ series.name }}"></a>
             <p><span class="fs-5 fw-bold">{{ series.name }}</span>

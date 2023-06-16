@@ -55,6 +55,7 @@ class Series(models.Model):
     class Meta:
         verbose_name = 'Series'
         ordering = ['name']
+        verbose_name_plural = 'Seriess'
 
     def __str__(self):
         return self.name
